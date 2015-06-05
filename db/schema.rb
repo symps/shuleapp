@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605140138) do
+ActiveRecord::Schema.define(version: 20150605154328) do
+
+  create_table "parents", force: true do |t|
+    t.integer  "id_num"
+    t.string   "name"
+    t.string   "photo"
+    t.string   "county"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "gender"
+    t.string   "ptype"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "schools", force: true do |t|
     t.integer  "code"
@@ -22,6 +36,67 @@ ActiveRecord::Schema.define(version: 20150605140138) do
     t.string   "phone"
     t.string   "address"
     t.string   "stype"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "staffs", force: true do |t|
+    t.integer  "id_num"
+    t.string   "name"
+    t.string   "sch_name"
+    t.integer  "sch_code"
+    t.string   "photo"
+    t.string   "county"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "gender"
+    t.string   "job"
+    t.integer  "staff_id"
+    t.string   "academic"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", force: true do |t|
+    t.integer  "adm"
+    t.string   "name"
+    t.date     "dob"
+    t.string   "gender"
+    t.string   "sch_name"
+    t.integer  "sch_code"
+    t.string   "county"
+    t.integer  "form"
+    t.string   "stream"
+    t.string   "dorm"
+    t.date     "admitted_on"
+    t.string   "previous_sch"
+    t.string   "kcpe"
+    t.string   "email"
+    t.string   "parent"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teachers", force: true do |t|
+    t.integer  "id_no"
+    t.string   "name"
+    t.date     "dob"
+    t.string   "gender"
+    t.string   "sch_name"
+    t.integer  "sch_code"
+    t.string   "county"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "academic"
+    t.date     "employed_on"
+    t.string   "department"
+    t.string   "employer"
+    t.integer  "employee_num"
+    t.string   "email"
+    t.string   "parent"
     t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
